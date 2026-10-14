@@ -1,1 +1,1 @@
-PENDING — GitHub CLI authentication must be restored before a public repository URL can be created and recorded.
+https://github.com/noambellin-schonfeld-png/campus-customs-homework-5
