@@ -1,0 +1,15 @@
+# Secrets: keep local environment files private, while committing the template.
+.env
+.env.*
+!.env.example
+
+# Local Codex configuration and generated environments.
+.codex/
+.venv/
+venv/
+node_modules/
+dist/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.DS_Store

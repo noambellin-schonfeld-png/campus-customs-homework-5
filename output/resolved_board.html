@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs — Resolved Board Screenshots</title>
+  <style>
+    :root { --navy:#102b46; --blue:#28658a; --paper:#f5f3ee; --card:#fffefa; --ink:#1d2b38; --muted:#667584; --line:#d8e0e4; --gold:#e7b84c; --green:#256d58; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:15px/1.55 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    header { padding:34px max(20px,calc((100vw - 1120px)/2)); background:var(--navy); color:white; border-bottom:5px solid var(--gold); }
+    .brand { color:#b9d4e5; font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { margin:8px 0 4px; font-size:clamp(27px,4vw,40px); line-height:1.15; }
+    header p { max-width:800px; color:#d2e0e9; margin:9px 0 0; }
+    main { max-width:1120px; margin:26px auto 64px; padding:0 20px; }
+    .summary { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 18px; }
+    .pill { background:white; border:1px solid var(--line); border-radius:99px; color:var(--navy); font-size:12px; font-weight:750; padding:7px 12px; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 24px; }
+    nav a { background:#e8f1f6; border:1px solid #cfdae0; border-radius:8px; color:var(--navy); font-weight:750; padding:9px 13px; text-decoration:none; }
+    nav a:hover, nav a:focus-visible { background:white; outline:2px solid #79b8d6; outline-offset:2px; }
+    article { margin:24px 0 30px; padding:clamp(16px,3vw,25px); background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:0 8px 24px #102b460a; }
+    .kicker { color:var(--blue); font-size:11px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    h2 { color:var(--navy); font-size:24px; margin:4px 0 8px; }
+    .outcome { border-left:3px solid var(--green); background:#edf7f2; color:#334657; margin:12px 0 17px; padding:10px 13px; }
+    figure { margin:0; }
+    img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:white; }
+    figcaption { color:var(--muted); font-size:12px; margin-top:8px; }
+    footer { color:var(--muted); font-size:12px; text-align:center; padding:0 20px 32px; }
+    @media print { body { background:white; } nav { display:none; } article { break-inside:avoid; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Campus Customs · Operations Desk</div>
+    <h1>Resolved board evidence</h1>
+    <p>Three real screenshots of the React + Vite desk, captured with the working database connected after the agent runs and human decisions.</p>
+  </header>
+  <main>
+    <div class="summary" aria-label="Final board state">
+      <span class="pill">Tickets 101, 102, 103 · resolved</span>
+      <span class="pill">Checking · $152.00</span>
+      <span class="pill">Shop date · 2026-08-31</span>
+      <span class="pill">Approval queue · empty</span>
+    </div>
+    <nav aria-label="Ticket screenshots">
+      <a href="#ticket-101">Ticket 101 · Tee</a>
+      <a href="#ticket-102">Ticket 102 · Rent</a>
+      <a href="#ticket-103">Ticket 103 · Hoodies</a>
+    </nav>
+
+    <article id="ticket-101">
+      <div class="kicker">Ticket 101 · customer order</div>
+      <h2>Bulldog tee · resolved as approved procurement</h2>
+      <p class="outcome">Invoice 501 was paid with human approval, then a one-unit size-S tee purchase order was approved for $8. The board records the five-day lead time; physical receipt and customer delivery are not modeled.</p>
+      <figure><img src="resolved_board_files/ticket_101.png" alt="React operations desk with resolved ticket 101 selected, checking at $152, the ticket note, and its recorded agent handoff summary"><figcaption>React board screenshot — ticket 101 selected. The run summary and the latest approved action are visible.</figcaption></figure>
+    </article>
+
+    <article id="ticket-102">
+      <div class="kicker">Ticket 102 · rent notice</div>
+      <h2>Chapel Street rent · paid with human approval</h2>
+      <p class="outcome">Lease 1 rent of $2,400 was paid two days before its recorded due date. The lease schedule advanced to 2026-10-02; no landlord message was sent.</p>
+      <figure><img src="resolved_board_files/ticket_102.png" alt="React operations desk with resolved ticket 102 selected, its approval note, and recorded agent handoff summary"><figcaption>React board screenshot — ticket 102 selected. The payment approval and rent timing are visible in its latest board note.</figcaption></figure>
+    </article>
+
+    <article id="ticket-103">
+      <div class="kicker">Ticket 103 · bulk hoodie discount</div>
+      <h2>Yale AI Club request · closed as unable to fulfill</h2>
+      <p class="outcome">The agents found 8 of 20 requested units, no recorded discount policy, and no exact vendor/SKU match. The operator chose to close the ticket without a price or delivery commitment. The customer draft was not sent.</p>
+      <figure><img src="resolved_board_files/ticket_103.png" alt="React operations desk with resolved ticket 103 selected, the human closure note, and recorded agent handoff summary"><figcaption>React board screenshot — ticket 103 selected. The human closure decision, cash balance, and team contributions are visible.</figcaption></figure>
+    </article>
+  </main>
+  <footer>Captured from the live React board at localhost:5173 with the local FastAPI service and data/campus_customs_new.db connected. Original source data remains untouched.</footer>
+</body>
+</html>

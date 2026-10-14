@@ -1,0 +1,73 @@
+{
+  "database": "data/campus_customs_new.db",
+  "transport": "MCP stdio",
+  "tests": [
+    {
+      "prompt": "For ticket 101, check the database for the exact stock and pricing of SKU CC-TEE-WHITE in size S. Return the tool result without filling in missing values.",
+      "tool_name": "check_item_stock",
+      "tool_output": {
+        "found": true,
+        "inventory": {
+          "sku": "CC-TEE-WHITE",
+          "name": "Classic Bulldog Tee",
+          "size": "S",
+          "qty": 0,
+          "location": "Aisle B"
+        },
+        "pricing": {
+          "sku": "CC-TEE-WHITE",
+          "unit_cost": 8.0,
+          "list_price": 28.0
+        }
+      }
+    },
+    {
+      "prompt": "For ticket 102, look up lease 1 and compare its next rent date with the shop date from the database. Return the lease status tool result.",
+      "tool_name": "get_lease_status",
+      "tool_output": {
+        "found": true,
+        "lease": {
+          "id": 1,
+          "space_name": "Chapel Street shop",
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400.0,
+          "next_due": "2026-09-02",
+          "notes": null
+        },
+        "shop_date": "2026-08-31",
+        "is_overdue": false,
+        "days_until_due": 2
+      }
+    },
+    {
+      "prompt": "For ticket 101, inspect invoice 501 and its vendor. Report the due status, lead time, and whether the vendor has an open invoice blocking shipments, using the database tool result.",
+      "tool_name": "get_invoice_and_vendor_status",
+      "tool_output": {
+        "found": true,
+        "invoice": {
+          "invoice_id": 501,
+          "vendor_id": 1,
+          "amount": 840.0,
+          "due_date": "2026-08-28",
+          "status": "open",
+          "description": "Rush reprint CC-TEE-WHITE S",
+          "vendor_name": "Bulldog Print Co",
+          "specialty": "apparel reprint",
+          "lead_days": 5
+        },
+        "shop_date": "2026-08-31",
+        "is_overdue": true,
+        "vendor_has_open_invoice": true,
+        "vendor_open_invoices": [
+          {
+            "id": 501,
+            "amount": 840.0,
+            "due_date": "2026-08-28",
+            "status": "open",
+            "description": "Rush reprint CC-TEE-WHITE S"
+          }
+        ]
+      }
+    }
+  ]
+}
